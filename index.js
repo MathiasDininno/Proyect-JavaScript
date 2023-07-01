@@ -40,56 +40,75 @@ carnet(60)*/
 nota(0)*/
 
 
-let titulo = document.getElementById('titulo').innerHTML = "Title"
+let url = '#';
 
-document.body.onload = addElement;
-
-function addElement() {
-    // crea un nuevo div
-    // y añade contenido
-    let newDiv = document.createElement("div");
-    newDiv.className += "divImg"
-    let newContent = document.createTextNode("Img opcional");
-    newDiv.appendChild(newContent); //añade texto al div creado.
-
-    // añade el elemento creado y su contenido al DOM
-    let currentDiv = document.getElementById("div1");
-    document.body.insertBefore(newDiv, currentDiv);
-}
-
-
+let image = new Image();
+image.src = url;
+document.getElementById('imgContainer').appendChild(image);
 
 
 // Obtén el elemento contenedor donde deseas agregar las tarjetas
-var cardWrapper = document.getElementById("card-wrapper");
+let cardWrapper = document.getElementById("card-wrapper");
 
 // Datos para las tarjetas
-var cardData = [
-  { title: "Tarjeta 1", content: "Contenido de la tarjeta 1" },
-  { title: "Tarjeta 2", content: "Contenido de la tarjeta 2" },
-  { title: "Tarjeta 3", content: "Contenido de la tarjeta 3" }
+let cardData = [
+    { title: "Tarjeta 1", content: "Contenido de la tarjeta 1", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 2", content: "Contenido de la tarjeta 2", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 3", content: "Contenido de la tarjeta 3", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 4", content: "Contenido de la tarjeta 4", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 5", content: "Contenido de la tarjeta 5", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 6", content: "Contenido de la tarjeta 6", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    { title: "Tarjeta 7", content: "Contenido de la tarjeta 7", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" }
 ];
 
 // Itera sobre los datos de las tarjetas
-for (var i = 0; i < cardData.length; i++) {
-  // Crea el elemento contenedor de la tarjeta
-  var cardContainer = document.createElement("div");
-  cardContainer.className = "card";
+for (let i = 0; i < cardData.length; i++) {
+    // Crea el elemento contenedor de la tarjeta
+    let cardContainer = document.createElement("div");
+    cardContainer.className = "card";
 
-  // Crea los elementos internos de la tarjeta
-  var cardHeader = document.createElement("div");
-  cardHeader.className = "card-header";
-  cardHeader.textContent = cardData[i].title;
+    // Crea los elementos internos de la tarjeta
+    let cardHeader = document.createElement("div");
+    cardHeader.className = "card-header";
+    cardHeader.textContent = cardData[i].title;
 
-  var cardContent = document.createElement("div");
-  cardContent.className = "card-content";
-  cardContent.textContent = cardData[i].content;
+    let cardContent = document.createElement("div");
+    cardContent.className = "card-content";
+    cardContent.textContent = cardData[i].content;
 
-  // Agrega los elementos internos a la tarjeta
-  cardContainer.appendChild(cardHeader);
-  cardContainer.appendChild(cardContent);
+    let imgContent = document.createElement("img");
+    imgContent.className = "img-content";
+    imgContent.src = cardData[i].img;
 
-  // Agrega la tarjeta al elemento contenedor
-  cardWrapper.appendChild(cardContainer);
+    // Agrega los elementos internos a la tarjeta
+    cardContainer.appendChild(cardHeader);
+    cardContainer.appendChild(cardContent);
+    cardContainer.appendChild(imgContent);
+
+    // Agrega la tarjeta al elemento contenedor
+    cardWrapper.appendChild(cardContainer);
 }
 
+
+let productosMixtos = document.getElementById("productosMixtos")
+
+let productos = [
+    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
+    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" }
+];
+
+for (let i = 0; i < productos.length; i++) {
+
+    let product = document.createElement("div");
+    product.className = "productos";
+
+    let imgContent = document.createElement("img");
+    imgContent.className = "img-content";
+    imgContent.src = productos[i].img;
+    
+
+    product.appendChild(imgContent)
+
+    productosMixtos.appendChild(product);
+}
