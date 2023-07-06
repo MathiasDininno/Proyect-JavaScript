@@ -39,6 +39,7 @@ carnet(60)*/
 
 nota(0)*/
 
+let novedad = document.getElementById("novedad").innerHTML = "Novedad"
 
 let url = '#';
 
@@ -88,6 +89,7 @@ for (let i = 0; i < cardData.length; i++) {
     // Agrega la tarjeta al elemento contenedor
     cardWrapper.appendChild(cardContainer);
 }
+
 
 
 let productosMixtos = document.getElementById("productosMixtos")

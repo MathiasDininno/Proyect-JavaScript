@@ -37,10 +37,9 @@ body{
     grid-auto-flow: column;
 }
 
-.productosMixtos{
-    display: grid;
-    grid-template-rows: repeat(2,14.875rem);
-    grid-template-areas:
-        "ad1 ad2"
-        "ad1 ad3";
-}
+.container-fluid{
+    display: grid !important;
+    grid-template-columns: 15% 50% 35%!important;
+    align-items: center;
+    justify-content: space-between;
+  }
