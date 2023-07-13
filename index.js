@@ -39,9 +39,24 @@ carnet(60)*/
 
 nota(0)*/
 
-let novedad = document.getElementById("novedad").innerHTML = "Novedad"
+//Login
 
-let url = '#';
+function login() {
+    
+    let usuario = document.getElementById('usuario').value
+    let contraseña = document.getElementById('contraseña').value
+
+    if (usuario == "Juan" && contraseña=='1234') {
+        window.location="index.html"
+    } else {
+        alert("Datos incorrectos")
+    }
+}
+
+
+let novedad = document.getElementById("novedad").innerHTML = "Novedades"
+
+let url = 'https://www.timberline.com.ar/themes/leo_bicmart/assets/img/modules/appagebuilder/images/Instagram-empeza-a-seguirnos!.png';
 
 let image = new Image();
 image.src = url;
@@ -53,13 +68,13 @@ let cardWrapper = document.getElementById("card-wrapper");
 
 // Datos para las tarjetas
 let cardData = [
-    { title: "Tarjeta 1", content: "Contenido de la tarjeta 1", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 2", content: "Contenido de la tarjeta 2", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 3", content: "Contenido de la tarjeta 3", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 4", content: "Contenido de la tarjeta 4", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 5", content: "Contenido de la tarjeta 5", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 6", content: "Contenido de la tarjeta 6", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    { title: "Tarjeta 7", content: "Contenido de la tarjeta 7", img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" }
+    { title: "Tarjeta 1", content: "Contenido de la tarjeta 1", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 2", content: "Contenido de la tarjeta 2", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 3", content: "Contenido de la tarjeta 3", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 4", content: "Contenido de la tarjeta 4", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 5", content: "Contenido de la tarjeta 5", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 6", content: "Contenido de la tarjeta 6", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" },
+    { title: "Tarjeta 7", content: "Contenido de la tarjeta 7", img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg", valor: "$1700" }
 ];
 
 // Itera sobre los datos de las tarjetas
@@ -81,10 +96,15 @@ for (let i = 0; i < cardData.length; i++) {
     imgContent.className = "img-content";
     imgContent.src = cardData[i].img;
 
+    let cardPrecio = document.createElement("div");
+    cardPrecio.className = "card-footer";
+    cardPrecio.textContent = cardData[i].valor;
+
     // Agrega los elementos internos a la tarjeta
     cardContainer.appendChild(cardHeader);
     cardContainer.appendChild(cardContent);
     cardContainer.appendChild(imgContent);
+    cardContainer.appendChild(cardPrecio);
 
     // Agrega la tarjeta al elemento contenedor
     cardWrapper.appendChild(cardContainer);
@@ -95,9 +115,9 @@ for (let i = 0; i < cardData.length; i++) {
 let productosMixtos = document.getElementById("productosMixtos")
 
 let productos = [
-    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" },
-    {img: "https://http2.mlstatic.com/D_Q_NP_606277-MLA46234552677_062021-AC.webp" }
+    {img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg" },
+    {img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg" },
+    {img: "https://www.payper.com/sites/default/files/PAYPER%20Catalogue%20Comida_para_Mascotas%20ES%202007.jpg" }
 ];
 
 for (let i = 0; i < productos.length; i++) {

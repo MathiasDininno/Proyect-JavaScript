@@ -5,6 +5,24 @@ body{
     height: auto;
 }
 
+#container{
+    width: 100%;
+    justify-content: center;
+    height: auto;
+    display: grid;
+}
+
+#imgContainer{
+    display: grid;
+    justify-content: center;
+}
+
+#imgContainer > img{
+    width: 80%;
+    height: auto;
+    justify-self: center;
+}
+
 #card-wrapper{
     display: grid;
     grid-template-columns: repeat(3, 33.3%);
